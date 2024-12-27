@@ -34,36 +34,27 @@
              <img src="https://s3-media0.fl.yelpcdn.com/bphoto/qjF3ZFVIem_aJSTEfR40GA/o.jpg" width="300px">
        </div>
         
-        <script>
-            var OurStories = document.getElementById("ourstories");
-            var ourStoriesPressed = function(){
-                var changebox = document.getElementById("changeBox");
-                changebox.innerHTML = "Under Constuction"
-            }
-            OurStories.addEventListener("click", ourStoriesPressed);
-        </script>
-        <script>
-            var home = document.getElementById("home");
-            var HomePressed = function(){
-                var changebox = document.getElementById("changeBox");
-                changebox.innerHTML = "Refresh The Page";
-            }
-            home.addEventListener("click", HomePressed);
-        </script>
-        <script>
-            var WantMoreInfo = document.getElementById("WantMoreInfo");
-            var WantMoreInfoPressed = function(){
-                var changebox = document.getElementById("changeBox");
-                changebox.innerHTML = "Coming Soon";
-                var link = document.createElement("a")
-                link.href = "https://www.newvistasaz.com/";
-                link.target = "_blank";
-                var linktext = document.createTextNode("New Vistas");
-                link.appendChild("linktext");
-                document.body.appendChild("fulllink");
+       <script>
+        var OurStories = document.getElementById("ourstories");
+        var ourStoriesPressed = function(){
+            location.href = "https://aricho2014.github.io/NewVistasWebsite/stories"
+        }
+        OurStories.addEventListener("click", ourStoriesPressed);
+    </script>
+    <script>
+        var home = document.getElementById("home");
+        var HomePressed = function(){
+            location.href = "https://aricho2014.github.io/NewVistasWebsite/home"
+        }
+        home.addEventListener("click", HomePressed);
+    </script>
+    <script>
+        var WantMoreInfo = document.getElementById("WantMoreInfo");
+        var WantMoreInfoPressed = function(){
+            location.href = "https://aricho2014.github.io/NewVistasWebsite/moreinfo"
 
-            }
-            WantMoreInfo.addEventListener("click", WantMoreInfoPressed);
+        }
+        WantMoreInfo.addEventListener("click", WantMoreInfoPressed);
         </script>
     </body>
 </html>
