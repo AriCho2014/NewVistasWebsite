@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <title>New Vistas Center for Education</title>
+        <style>
+            #header{
+                background-color: brown;
+                color: white;
+                font-family: Arial, Helvetica, sans-serif;
+                
+            }
+        </style>
+    </head>
+    
+    <body>
+        <button id="home">Home</button>
+        <button id="ourstories">Our Stories</button>
+        <button id="WantMoreInfo">Want More Info?</button>
+        <center><h1 id = "header">My Awesome School</h1></center>
+        <h2>Creater and Manager: Aarize Choudhury</h2>
+        <h3>Email</h3>
+        <p>AarizeC0114@gmail.com</p>
+        <h2>About New Vistas</h2>
+        <h3>New Vistas Address</h3>
+        <p><a target="_blank" href="https://www.google.com/maps/place/New+Vistas+Center+For+Education/@33.3148337,-111.8429106,17.86z/data=!4m6!3m5!1s0x872baa1d132b2b91:0x639c5401c721abdd!8m2!3d33.3148216!4d-111.8433697!16s%2Fg%2F1vlk20rv?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoJLDEwMjExMjMzSAFQAw%3D%3D">670 N Arizona Ave, Chandler, AZ 85225</a></p>
+        <h3>Grades</h3>
+        <p>Preschool to Sixth Grade</p>
+        <h3>Clubs</h3>
+        <p>Singing, Coding, Math, Art, Martial Arts, Bucket Drumming, and a Lot of Sports</p>
+        <a target="_blank" href="https://www.newvistasaz.com/">Find out more at the New Vistas Center for Education website.</a>
+        
+        
+        <script>
+            var OurStories = document.getElementById("ourstories");
+            var ourStoriesPressed = function(){
+                var changebox = document.getElementById("changeBox");
+                changebox.innerHTML = "Under Constuction"
+            }
+            OurStories.addEventListener("click", ourStoriesPressed);
+        </script>
+        <script>
+            var home = document.getElementById("home");
+            var HomePressed = function(){
+                var changebox = document.getElementById("changeBox");
+                changebox.innerHTML = "Refresh The Page";
+            }
+            home.addEventListener("click", HomePressed);
+        </script>
+        <script>
+            var WantMoreInfo = document.getElementById("WantMoreInfo");
+            var WantMoreInfoPressed = function(){
+                var changebox = document.getElementById("changeBox");
+                changebox.innerHTML = "Coming Soon";
+                var link = document.createElement("a")
+                link.href = "https://www.newvistasaz.com/";
+                link.target = "_blank";
+                var linktext = document.createTextNode("New Vistas");
+                link.appendChild("linktext");
+                document.body.appendChild("fulllink");
+
+            }
+            WantMoreInfo.addEventListener("click", WantMoreInfoPressed);
+        </script>
+    </body>
+</html>
+    

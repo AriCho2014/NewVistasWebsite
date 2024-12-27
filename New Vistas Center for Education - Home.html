@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <title>New Vistas Center for Education</title>
+        <style>
+            #header{
+                background-color: brown;
+                color: white;
+                font-family: Arial, Helvetica, sans-serif;
+                
+            }
+        </style>
+    </head>
+    
+    <body>
+        <button id="home">Home</button>
+        <button id="ourstories">Our Stories</button>
+        <button id="WantMoreInfo">Want More Info?</button>
+         <center><h1 id = "header">My Awesome School</h1></center>
+         <div id="changeBox"><p>My school name is <strong> Vistas Center of Education</strong>.<br> 
+            This is the best school in the valley.<br>
+            Why is my school the best?<br>
+            </p>
+        <ul><em>
+            <li> My teachers are very caring, highly educated and friendly. Do you feel the same in your classroom?</li>
+             <li>We have teacher aids to help me and the teachers to make things better and easier in the classroom. Do you get help from teacher aids as well?</li>
+             <li>My classes are full of excitements and new things everyday. Do you learn new exciting things every day in school?</li>
+             <li>My teachers and teacher aids customize the content of my education according to my need and intrests.</li>
+             <li>I made new friends every year in my school. Basically every one in my class are my friends. I also make friends from other classes. How many friends do you have in your school?</li>
+             <li>My friends' guardian and parents are so cool!! My parents get to make friendship with them too. Isn't that awesome?</li>
+        </ul></em>
+        <p></p>
+             <img src="https://s3-media0.fl.yelpcdn.com/bphoto/qjF3ZFVIem_aJSTEfR40GA/o.jpg" width="300px">
+       </div>
+        
+        <script>
+            var OurStories = document.getElementById("ourstories");
+            var ourStoriesPressed = function(){
+                var changebox = document.getElementById("changeBox");
+                changebox.innerHTML = "Under Constuction"
+            }
+            OurStories.addEventListener("click", ourStoriesPressed);
+        </script>
+        <script>
+            var home = document.getElementById("home");
+            var HomePressed = function(){
+                var changebox = document.getElementById("changeBox");
+                changebox.innerHTML = "Refresh The Page";
+            }
+            home.addEventListener("click", HomePressed);
+        </script>
+        <script>
+            var WantMoreInfo = document.getElementById("WantMoreInfo");
+            var WantMoreInfoPressed = function(){
+                var changebox = document.getElementById("changeBox");
+                changebox.innerHTML = "Coming Soon";
+                var link = document.createElement("a")
+                link.href = "https://www.newvistasaz.com/";
+                link.target = "_blank";
+                var linktext = document.createTextNode("New Vistas");
+                link.appendChild("linktext");
+                document.body.appendChild("fulllink");
+
+            }
+            WantMoreInfo.addEventListener("click", WantMoreInfoPressed);
+        </script>
+    </body>
+</html>
+    
