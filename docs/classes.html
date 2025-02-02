@@ -18,5 +18,36 @@
         <button id="classes">Classes</button>
         <button id="WantMoreInfo">Want More Info?</button>
          <center><h1 id = "header">My Awesome School</h1></center>
+
+         <script>
+            var OurStories = document.getElementById("ourstories");
+            var ourStoriesPressed = function(){
+                location.href = "https://aricho2014.github.io/NewVistasWebsite/stories"
+            }
+            OurStories.addEventListener("click", ourStoriesPressed);
+        </script>
+        <script>
+            var home = document.getElementById("home");
+            var HomePressed = function(){
+                location.href = "https://aricho2014.github.io/NewVistasWebsite/home"
+            }
+            home.addEventListener("click", HomePressed);
+        </script>
+        <script>
+            var WantMoreInfo = document.getElementById("WantMoreInfo");
+            var WantMoreInfoPressed = function(){
+                location.href = "https://aricho2014.github.io/NewVistasWebsite/moreinfo"
+    
+            }
+            WantMoreInfo.addEventListener("click", WantMoreInfoPressed);
+            </script>
+            <script>
+                var ClassesEl = document.getElementById("classes");
+                var ClassesPressed = function(){
+                    location.href = "https://aricho2014.github.io/NewVistasWebsite/classes"
+    
+                }
+                ClassesEl.addEventListener("click", ClassesPressed);
+            </script>
     </body>
 </html>
