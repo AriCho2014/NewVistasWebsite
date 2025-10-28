@@ -21,10 +21,13 @@
             }
             body{
                 background-color: black;
-            }
-            #text{
                 color: white;
             }
+            .lightmode{
+                background-color: white;
+                color: black;
+            }
+            
         </style>
     </head>
     
@@ -33,6 +36,7 @@
         <button id="ourstories">Our Stories</button>
         <button id="classes">Classes</button>
         <button id="WantMoreInfo">Want More Info?</button>
+        <button id="lightMode" onclick="ToggleLightMode()">Switch to Light Mode</button>
          <center><h1 id = "header">My Awesome School</h1></center>
          <div id="text"><p>My school name is <strong><em> New Vistas</em> Center of Education</strong>.<br> 
             This is the best school in the valley.<br>
@@ -86,6 +90,24 @@
             }
             ClassesEl.addEventListener("click", ClassesPressed);
         </script>
+        <script>
+            function ToggleLightMode() {
+                var element = document.body
+                var light = document.getElementById ("lightMode");
+                element.classList.toggle("lightmode");
+                if (light.innerHTML === "Switch to Light Mode") {
+                    light.innerHTML = "Switch to Dark Mode";
+                }
+                else {
+                    light.innerHTML = "Switch to Light Mode";
+                }}
+
+                
+        
+
+
+            
+</script>
     </body>
 </html>
     
