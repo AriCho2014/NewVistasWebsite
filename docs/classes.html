@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>New Vistas Center for Education</title>
+    <link rel="stylesheet" href="style/header.css">
     <style>
         body, h1, p, button, a, #text {
             transition: background-color 0.5s, color 0.5s; /* Smooth fade for all elements */
@@ -18,42 +19,51 @@
             background-color: white;
             color: black;
         }
-
-        #header {
-            background-color: brown;
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            transition: background-color 0.5s, color 0.5s;
-        }
-
-        .lightmode #header {
-            background-color: brown; /* lighter brown for light mode */
-            color: black;
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
         }
 
         button {
-            color: gray;
-            border: 1px solid gray;
-            margin-right: 5px;
-            padding: 5px 10px;
+            padding: 10px 20px;
+            background-color: brown;
+            color: white;
+            border: none;
+            border-radius: 8px;
             cursor: pointer;
-            background-color: transparent;
-            transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         button:hover {
+            background-color: #a0522d;
+            transform: scale(1.05);
+        }
+
+        button.active {
             color: white;
             border-color: white;
+            font-weight: bold;
         }
 
         .lightmode button {
-            color: black;
-            border-color: darkgray;
+            background-color: #d2691e;
+            color: white;
         }
 
         .lightmode button:hover {
+            background-color: red;
             color: white;
-            background-color: black;
+        }
+         #text {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            line-height: 1.6;
+            text-align: center;
         }
 
         a {
@@ -84,12 +94,13 @@
     </style>
 </head>
 <body>
-    <button id="home">Home</button>
-    <button id="ourstories">Our Stories</button>
-    <button id="classes" class="active">Classes</button>
-    <button id="WantMoreInfo">Want More Info?</button>
-    <button id="lightMode" onclick="ToggleLightMode()">Switch to Light Mode</button>
-
+    <nav>
+        <button id="home">Home</button>
+        <button id="ourstories">Our Stories</button>
+        <button id="classes" class="active">Classes</button>
+        <button id="WantMoreInfo">Want More Info?</button>
+        <button id="lightMode" onclick="ToggleLightMode()">Switch to Light Mode</button>
+    </nav>
     <center><h1 id="header">My Awesome School</h1></center>
 
     <div id="text">
@@ -104,7 +115,7 @@
 
     <script>
         document.getElementById("ourstories").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/stories";
-        document.getElementById("home").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/home";
+        document.getElementById("home").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/";
         document.getElementById("WantMoreInfo").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/moreinfo";
         document.getElementById("classes").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/classes";
 

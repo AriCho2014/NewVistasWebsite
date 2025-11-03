@@ -1,112 +1,152 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="utf-8"> 
-        <title>New Vistas Center for Education</title>
-        <style>
-             body, h1, h2, h3, p, a, button, #header, #text {
-            transition: background-color 0.5s, color 0.5s;
-        }
-            #header{
-                background-color: brown;
-                color: white;
-                font-family: Arial, Helvetica, sans-serif;
-                
-            }
-            body{
-                background-color: black;
-                color: white;
-            }
-            .lightmode{
-                background-color: white;
-                color: black;
-            }
-            #WantMoreInfo:hover {
-                color: white;
-                border-color: white;
-            }
-            button {
-                color: gray;
-                border: 1px solid gray;
-                margin-right: 5px;
-                padding: 5px 10px;
-                cursor: pointer;
-                background-color: transparent;
-                transition: all 0.3s;
-            }
-            button:hover {
-                color: white;
-                border-color: white;
-            }
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>New Vistas Center for Education</title>
+            <link rel="stylesheet" href="style/header.css">
+<style>
+    /* ---------- Global Styles ---------- */
+    body, h1, h2, h3, p, a, button, #header, #text {
+        transition: background-color 0.5s, color 0.5s;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-/* ✅ Light mode adjustments */
-            .lightmode button {
-                color: black;
-                border-color: black;
-                background-color: transparent;
-                transition: all 0.3s;
-            }
+    body {
+        background-color: black;
+        color: white;
+        margin: 0;
+        padding: 0;
+    }
 
-            .lightmode button:hover {
-                color: white;
-                background-color: black;
-            }
-            .active {
-                color: white;
-                border-color: white;
-                font-weight: bold;
-            }
+    .lightmode {
+        background-color: white;
+        color: black;
+    }
 
+    /* ---------- Navigation Buttons ---------- */
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 15px 0;
+    }
 
+   button {
+        padding: 10px 20px;
+        background-color: brown;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
 
+    button:hover {
+        background-color: #a0522d;
+        transform: scale(1.05);
+    }
 
+    button.active {
+        color: white;
+        border-color: white;
+        font-weight: bold;
+    }
 
-        </style>
-    </head>
-    
-    <body>
-        <button id="home">Home</button>
-        <button id="ourstories">Our Stories</button>
-        <button id="classes">Classes</button>
-        <button id="WantMoreInfo" class="active">Want More Info?</button>
-        <button id="lightMode" onclick="ToggleLightMode()">Switch to Light Mode</button>
-        <center><h1 id = "header">My Awesome School</h1></center>
-        <div id="text"><h2>Creater and Manager: AriCho</h2>
-        <h3>Email</h3>
-        <p>AarizeCho@gmail.com</p>
-        <h2>About New Vistas</h2>
-        <h3>New Vistas Address</h3>
-        <p><a target="_blank" href="https://www.google.com/maps/place/New+Vistas+Center+For+Education/@33.3148337,-111.8429106,17.86z/data=!4m6!3m5!1s0x872baa1d132b2b91:0x639c5401c721abdd!8m2!3d33.3148216!4d-111.8433697!16s%2Fg%2F1vlk20rv?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoJLDEwMjExMjMzSAFQAw%3D%3D">670 N Arizona Ave, Chandler, AZ 85225</a></p>
-        <h3>Grades</h3>
-        <p>Preschool to Sixth Grade</p>
-        <h3>Clubs</h3>
-        <p>Singing, Coding, Math, Art, Martial Arts, Bucket Drumming, and a Lot of Sports</p>
-        <a target="_blank" href="https://www.newvistasaz.com/">Find out more at the New Vistas Center for Education website.</a></div>
-        
-        
-        <script>
-            document.getElementById("ourstories").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/stories";
-            document.getElementById("home").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/home";
-            document.getElementById("WantMoreInfo").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/moreinfo";
-            document.getElementById("classes").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/classes";
+    .lightmode button {
+        background-color: #d2691e;
+        color: white;
+    }
 
-            function ToggleLightMode() {
-                var element = document.body
-                var light = document.getElementById ("lightMode");
-                element.classList.toggle("lightmode");
-                if (light.innerHTML === "Switch to Light Mode") {
-                    light.innerHTML = "Switch to Dark Mode";
-                }
-                else {
-                    light.innerHTML = "Switch to Light Mode";
-                }}
+    .lightmode button:hover {
+        background-color: red;
+        color: white;
+    }
 
-                
-        
+    /* ---------- Content ---------- */
+    #text {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        line-height: 1.6;
+    }
 
+    a {
+        color: lightblue;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
 
-            
-        </script>
-    </body>
+    a:hover {
+        color: deepskyblue;
+    }
+
+    .lightmode a {
+        color: darkblue;
+    }
+
+    .lightmode a:hover {
+        color: blue;
+    }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <button id="home">Home</button>
+    <button id="ourstories">Our Stories</button>
+    <button id="classes">Classes</button>
+    <button id="WantMoreInfo" class="active">Want More Info?</button>
+    <button id="lightMode" onclick="ToggleLightMode()">Switch to Light Mode</button>
+</nav>
+
+<!-- Header -->
+<h1 id="header">My Awesome School</h1>
+
+<!-- Main Text -->
+<div id="text">
+    <h2>Creator and Manager: AriCho</h2>
+    <h3>Email</h3>
+    <p>AarizeCho@gmail.com</p>
+
+    <h2>About New Vistas</h2>
+    <h3>New Vistas Address</h3>
+    <p>
+        <a target="_blank" href="https://www.google.com/maps/place/New+Vistas+Center+For+Education/@33.3148337,-111.8429106,17.86z/data=!4m6!3m5!1s0x872baa1d132b2b91:0x639c5401c721abdd!8m2!3d33.3148216!4d-111.8433697!16s%2Fg%2F1vlk20rv?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoJLDEwMjExMjMzSAFQAw%3D%3D">
+        670 N Arizona Ave, Chandler, AZ 85225
+        </a>
+    </p>
+
+    <h3>Grades</h3>
+    <p>Preschool to Sixth Grade</p>
+
+    <h3>Clubs</h3>
+    <p>Singing, Coding, Math, Art, Martial Arts, Bucket Drumming, and a lot of Sports</p>
+
+    <p><a target="_blank" href="https://www.newvistasaz.com/">Find out more at the New Vistas Center for Education website.</a></p>
+</div>
+
+<script>
+    // Navigation buttons
+    document.getElementById("ourstories").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/stories";
+    document.getElementById("home").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/home";
+    document.getElementById("WantMoreInfo").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/moreinfo";
+    document.getElementById("classes").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/classes";
+
+    // Light/Dark mode toggle
+    function ToggleLightMode() {
+        const body = document.body;
+        const button = document.getElementById("lightMode");
+        body.classList.toggle("lightmode");
+
+        button.textContent = body.classList.contains("lightmode")
+            ? "Switch to Dark Mode"
+            : "Switch to Light Mode";
+    }
+</script>
+
+</body>
 </html>
-    
