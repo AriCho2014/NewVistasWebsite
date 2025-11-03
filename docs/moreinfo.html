@@ -4,14 +4,14 @@
         <meta charset="utf-8"> 
         <title>New Vistas Center for Education</title>
         <style>
+             body, h1, h2, h3, p, a, button, #header, #text {
+            transition: background-color 0.5s, color 0.5s;
+        }
             #header{
                 background-color: brown;
                 color: white;
                 font-family: Arial, Helvetica, sans-serif;
                 
-            }
-            #WantMoreInfo{
-                color:gray;
             }
             body{
                 background-color: black;
@@ -21,6 +21,46 @@
                 background-color: white;
                 color: black;
             }
+            #WantMoreInfo:hover {
+                color: white;
+                border-color: white;
+            }
+            button {
+                color: gray;
+                border: 1px solid gray;
+                margin-right: 5px;
+                padding: 5px 10px;
+                cursor: pointer;
+                background-color: transparent;
+                transition: all 0.3s;
+            }
+            button:hover {
+                color: white;
+                border-color: white;
+            }
+
+/* ✅ Light mode adjustments */
+            .lightmode button {
+                color: black;
+                border-color: black;
+                background-color: transparent;
+                transition: all 0.3s;
+            }
+
+            .lightmode button:hover {
+                color: white;
+                background-color: black;
+            }
+            .active {
+                color: white;
+                border-color: white;
+                font-weight: bold;
+            }
+
+
+
+
+
         </style>
     </head>
     
@@ -28,7 +68,7 @@
         <button id="home">Home</button>
         <button id="ourstories">Our Stories</button>
         <button id="classes">Classes</button>
-        <button id="WantMoreInfo">Want More Info?</button>
+        <button id="WantMoreInfo" class="active">Want More Info?</button>
         <button id="lightMode" onclick="ToggleLightMode()">Switch to Light Mode</button>
         <center><h1 id = "header">My Awesome School</h1></center>
         <div id="text"><h2>Creater and Manager: AriCho</h2>
@@ -45,36 +85,11 @@
         
         
         <script>
-            var OurStories = document.getElementById("ourstories");
-            var ourStoriesPressed = function(){
-                location.href = "https://aricho2014.github.io/NewVistasWebsite/stories"
-            }
-            OurStories.addEventListener("click", ourStoriesPressed);
-        </script>
-        <script>
-            var home = document.getElementById("home");
-            var HomePressed = function(){
-                location.href = "https://aricho2014.github.io/NewVistasWebsite/home"
-            }
-            home.addEventListener("click", HomePressed);
-        </script>
-        <script>
-            var WantMoreInfo = document.getElementById("WantMoreInfo");
-            var WantMoreInfoPressed = function(){
-                location.href = "https://aricho2014.github.io/NewVistasWebsite/moreinfo"
+            document.getElementById("ourstories").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/stories";
+            document.getElementById("home").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/home";
+            document.getElementById("WantMoreInfo").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/moreinfo";
+            document.getElementById("classes").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/classes";
 
-            }
-            WantMoreInfo.addEventListener("click", WantMoreInfoPressed);
-        </script>
-        <script>
-            var ClassesEl = document.getElementById("classes");
-            var ClassesPressed = function(){
-                location.href = "https://aricho2014.github.io/NewVistasWebsite/classes"
-
-            };
-            ClassesEl.addEventListener("click", ClassesPressed);
-        </script>
-        <script>
             function ToggleLightMode() {
                 var element = document.body
                 var light = document.getElementById ("lightMode");
@@ -91,7 +106,7 @@
 
 
             
-</script>
+        </script>
     </body>
 </html>
     

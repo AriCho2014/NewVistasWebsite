@@ -1,84 +1,122 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>New Vistas Center for Education</title>
-        <style>
-        #header{
+<head>
+    <meta charset="utf-8">
+    <title>New Vistas Center for Education</title>
+    <style>
+        body, h1, p, button, a, #text {
+            transition: background-color 0.5s, color 0.5s; /* Smooth fade for all elements */
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .lightmode {
+            background-color: white;
+            color: black;
+        }
+
+        #header {
             background-color: brown;
             color: white;
             font-family: Arial, Helvetica, sans-serif;
-            
+            transition: background-color 0.5s, color 0.5s;
         }
-        #classes{
-                color:gray;
-            }
-        body{
-            background-color: black;
+
+        .lightmode #header {
+            background-color: brown; /* lighter brown for light mode */
+            color: black;
+        }
+
+        button {
+            color: gray;
+            border: 1px solid gray;
+            margin-right: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: transparent;
+            transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        }
+
+        button:hover {
             color: white;
+            border-color: white;
         }
-        .lightmode{
-                 color: black;
-                 background-color: white;
-            }
-        </style>
-    </head>
-    <body>
-        <button id="home">Home</button>
-        <button id="ourstories">Our Stories</button>
-        <button id="classes">Classes</button>
-        <button id="WantMoreInfo">Want More Info?</button>
-        <button id="lightMode" onclick="ToggleLightMode()">Switch to Light Mode</button>
-         <center><h1 id = "header">My Awesome School</h1></center>
-         <div id="text"><p>There are a lot of classes in New Vistas.<br>
-            There are 2 main classes, being math and language arts.<br>
-            There are also "specials" which are other classes.<br>
-            They include spanish, mandarin, Physichal Education(P.E.), <br>
-            computers, science lab, and music.
-         </p></div>
 
-         <script>
-            var OurStories = document.getElementById("ourstories");
-            var ourStoriesPressed = function(){
-                location.href = "https://aricho2014.github.io/NewVistasWebsite/stories"
-            }
-            OurStories.addEventListener("click", ourStoriesPressed);
-        </script>
-        <script>
-            var home = document.getElementById("home");
-            var HomePressed = function(){
-                location.href = "https://aricho2014.github.io/NewVistasWebsite/home"
-            }
-            home.addEventListener("click", HomePressed);
-        </script>
-        <script>
-            var WantMoreInfo = document.getElementById("WantMoreInfo");
-            var WantMoreInfoPressed = function(){
-                location.href = "https://aricho2014.github.io/NewVistasWebsite/moreinfo"
-    
-            }
-            WantMoreInfo.addEventListener("click", WantMoreInfoPressed);
-            </script>
-            <script>
-                var ClassesEl = document.getElementById("classes");
-                var ClassesPressed = function(){
-                    location.href = "https://aricho2014.github.io/NewVistasWebsite/classes"
-    
-                }
-                ClassesEl.addEventListener("click", ClassesPressed);
-            </script>
-            <script>
-            function ToggleLightMode() {
-                var element = document.body
-                var light = document.getElementById ("lightMode");
-                element.classList.toggle("lightmode");
-                if (light.innerHTML === "Switch to Light Mode") {
-                    light.innerHTML = "Switch to Dark Mode";
-                }
-                else {
-                    light.innerHTML = "Switch to Light Mode";
-                }}
+        .lightmode button {
+            color: black;
+            border-color: darkgray;
+        }
 
-            </script>
-    </body>
+        .lightmode button:hover {
+            color: white;
+            background-color: black;
+        }
+
+        a {
+            color: lightblue;
+            text-decoration: none;
+            transition: color 0.5s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .lightmode a {
+            color: blue;
+        }
+
+        #text {
+            padding: 10px;
+        }
+        .active {
+            color: white;
+            border-color: white;
+            font-weight: bold;
+        }
+        .lightmode .active {
+            border-color: black;
+        }
+    </style>
+</head>
+<body>
+    <button id="home">Home</button>
+    <button id="ourstories">Our Stories</button>
+    <button id="classes" class="active">Classes</button>
+    <button id="WantMoreInfo">Want More Info?</button>
+    <button id="lightMode" onclick="ToggleLightMode()">Switch to Light Mode</button>
+
+    <center><h1 id="header">My Awesome School</h1></center>
+
+    <div id="text">
+        <p>There are a lot of classes in New Vistas.<br>
+        There are 2 main classes, being math and language arts.<br>
+        There are also "specials" which are other classes.<br>
+        They include Spanish, Mandarin, Physical Education (P.E.), <br>
+        Computers, science lab, and music.
+        </p>
+        <p>Learn more on <a target="_blank" href="https://www.newvistasaz.com/">the New Vistas website</a>.</p>
+    </div>
+
+    <script>
+        document.getElementById("ourstories").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/stories";
+        document.getElementById("home").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/home";
+        document.getElementById("WantMoreInfo").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/moreinfo";
+        document.getElementById("classes").onclick = () => location.href = "https://aricho2014.github.io/NewVistasWebsite/classes";
+
+        function ToggleLightMode() {
+            const body = document.body;
+            const button = document.getElementById("lightMode");
+            body.classList.toggle("lightmode");
+
+            button.textContent = body.classList.contains("lightmode") 
+                ? "Switch to Dark Mode" 
+                : "Switch to Light Mode";
+        }
+    </script>
+</body>
 </html>
